@@ -207,4 +207,3 @@ bash
 
 - Save and close the editor.
 - Now, the system will automatically run the script at midnight each day.
-This is my markdown code i wanna style it so give styling as you think it will be right
