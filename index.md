@@ -188,7 +188,8 @@ flexibility.
 ## Here’s an example of automating the update and upgrade process in a shell script, scheduled to run every day at midnight.
 
 Script: update_system.sh<br><br>
-![Screenshot from 2024-12-28 13-58-26](https://github.com/user-attachments/assets/5b947a37-5450-402f-ab6e-54d0790ae2d1)
+![Screenshot from 2024-12-28 13-58-26](https://github.com/user-attachments/assets/864d1351-ff4c-41fe-a4b5-d1cc4b6eac8f)
+
 <br><br>
 1. Save the script as update_system.sh
 2. Make it executable
@@ -197,7 +198,7 @@ $ chmod +x update_system.sh
 
 To schedule this script to run every day at 12:00 AM:
 1. Open the crontab editor
-![Screenshot from 2024-12-28 14-04-24](https://github.com/user-attachments/assets/4279ff1c-d4df-405a-933d-fb02c015f2c0)
+![Screenshot from 2024-12-28 14-04-24](https://github.com/user-attachments/assets/76c70c66-9cd7-4210-a3ff-c802478b6f6f)
 
 <br><br>
 Add the following line:
