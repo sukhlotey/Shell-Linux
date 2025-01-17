@@ -185,6 +185,28 @@ logs, or deploy applications.
 conditionals, and variables for
 flexibility.
 
+# TIPS
+- If your screen gets too cluttered, you can clear your terminal using the clear command. You can still access previous commands using ↑ and ↓ to move line-by-line, or by scrolling in your terminal.
+* To copy and paste the commands:<br>
+1. Copy: ctrl+shift+c<br>
+2. Paste: ctrl+shift+v
+<br>
+- Not only can we use ls on the current working directory, but we can use it to list the contents of a different directory.
+- At our Desktop directory by running ls -F Desktop, i.e., the command ls with the -F option and the argument Desktop. The argument Desktop tells ls that we want a listing of something other than our current working directory:
+- $ ls -F Desktop
+- shell-lesson-data/
+-You will notice that cd doesn’t print anything. This is normal. Many shell commands will not output anything to the screen when successfully executed. But if we run pwd after it, we can see that we are now in /Users/nelle/Desktop/shell-lesson-data/exercise-data.
+
+- Complicated names of files and directories can make your life painful when working on the command line. Here we provide a few useful tips for the names of your files and directories.<br>
+1. Spaces can make a name more meaningful, but since spaces are used to separate arguments on the command line it is better to avoid them in names of files and directories. You can use - or _ instead (e.g. north-pacific-gyre/ rather than north pacific gyre/). To test this out, try typing mkdir north pacific gyre and see what directory (or directories!) are made when you check with ls -F.<br>
+2. Don’t begin the name with - (dash).
+Commands treat names starting with - as options.
+3. Stick with letters, numbers, . (period or ‘full stop’), - (dash) and _ (underscore).
+Many other characters have special meanings on the command line.
+
+# Loops
+Loops are a programming construct which allow us to repeat a command or set of commands for each item in a list. As such they are key to productivity improvements through automation. Similar to wildcards and tab completion, using loops also reduces the amount of typing required (and hence reduces the number of typing mistakes).
+
 ## Here’s an example of automating the update and upgrade process in a shell script, scheduled to run every day at midnight.
 
 Script: update_system.sh<br><br>
