@@ -214,7 +214,7 @@ magazine_row.html
 
 <code>~/frappe-bench/apps/magazines_management/magazines_management/www/</code>
 
-Steps to setup VueJS, TailwindCSS and FrappeUI.
+###### Steps to setup VueJS, TailwindCSS and FrappeUI.
 
 #####  npm create vue@latest
 
@@ -237,7 +237,7 @@ This will create config file ot tailwindCSS
 
 <code>npx tailwindcss init</code>
 
-Steps to setup TailwindCSS
+###### Steps to setup TailwindCSS
 
 - Replace the path with it:
 - In tailwind.config.js
@@ -281,3 +281,88 @@ createApp(App).mount('#app');
 So now TailwindCSS features can be use now.
 
 ##### Integrate FrappeUI
+
+<code>npm install frappe-ui</code>
+
+###### Steps to setup FrappeUI
+
+- Open tailwind.config.js
+- Add following code
+
+```bash
+/** @type {import('tailwindcss').Config} */
+import tailwindConfig from "frappe-ui/src/utils/tailwind.config";
+
+export default {
+  presets: [tailwindConfig],
+  content: [
+    "./index.html",
+    "./src/**/*.{vue,js,ts,jsx,tsx}",
+    "./node_modules/frappe-ui/src/components/**/*.{vue,js,ts,jsx,tsx}",
+		"../node_modules/frappe-ui/src/components/**/*.{vue,js,ts,jsx,tsx}",
+    ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+};
+```
+- Open vite.config.js
+- Add following line at the bottom
+
+```bash
+ optimizeDeps: {
+		include: ["frappe-ui > feather-icons", "showdown", "engine.io-client"],
+	},
+```
+- vite.config.js
+
+```bash
+import { fileURLToPath, URL } from 'node:url'
+
+import { defineConfig } from 'vite'
+import vue from '@vitejs/plugin-vue'
+import vueDevTools from 'vite-plugin-vue-devtools'
+
+export default defineConfig({
+  plugins: [
+    vue(),
+    vueDevTools(),
+  ],
+  resolve: {
+    alias: {
+      '@': fileURLToPath(new URL('./src', import.meta.url))
+    },
+  },
+  optimizeDeps: {
+		include: ["frappe-ui > feather-icons", "showdown", "engine.io-client"],
+	},
+})
+```
+##### Import FrappeUI components in main.js
+###### These are the components that used in Magazine application
+- Button
+- Spinner
+- Badge
+- Spinner 
+- main.js
+
+```bash
+import './assets/tailwind.css';
+import { Button, Rating,Badge,Spinner } from 'frappe-ui'
+import { createApp } from 'vue'
+import router from './router';
+import App from './App.vue'
+const app = createApp(App)
+app.component("Button", Button);
+app.component("Badge",Badge);
+app.component("Rating",Rating)
+app.component("Spinner",Spinner);
+app.use(router)
+app.mount('#app')
+```
+#### Now setup is completed
+###### Let's create Vuejs components to display magazines on browser
+
+- Install router
+<code>npm install </code>
