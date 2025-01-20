@@ -428,4 +428,15 @@ body {
 
 ### Output
 
-<img src="./frappeui.gif" alt="magazine gif"/>
+
+<img src="./z-images/frappeui.gif" alt="magazine gif"/>
+
+### Magazines List
+
+<img src="./z-images/frappeui-list.png" alt="magazine gif"/>
+
+### Magazine detail
+
+<img src="./z-images/frappeuidetail.png" alt="magazine gif"/>
+
+
