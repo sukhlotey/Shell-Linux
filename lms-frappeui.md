@@ -423,6 +423,9 @@ body {
 - Magazine.vue (Detail of specific magazine)
 - Here are the both files:
 
-[Magazines.vue](Magazines.vue)
-<br>
-[Magazine.vue](Magazine.vue)
+- [Magazines.vue](Magazines.vue)
+- [Magazine.vue](Magazine.vue)
+
+### Output
+
+<img src="./frappeui.gif" alt="magazine gif"/>
