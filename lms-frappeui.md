@@ -365,4 +365,60 @@ app.mount('#app')
 ###### Let's create Vuejs components to display magazines on browser
 
 - Install router
-<code>npm install </code>
+<code>npm install vue-router</code>
+
+- Create router.js in
+<code>/www/src/router.js</code>
+
+```bash
+import { createRouter, createWebHistory } from "vue-router";
+import Magazines from "@/components/Magazines.vue"; 
+import Magazine from "@/components/Magazine.vue"; 
+
+const routes = [
+  {
+    path: "/",
+    name: "Home",
+    component: Magazines,
+  },
+  {
+    path: "/magazine/:name",
+    name: "Magazine",
+    component: Magazine,
+    props: true,
+  },
+];
+
+const router = createRouter({
+  history: createWebHistory(),
+  routes,
+});
+
+export default router;
+```
+- Update App.vue file
+```bash
+<template>
+  <div id="app">
+    <router-view></router-view>
+  </div>
+</template>
+
+<script>
+export default {
+  name: "App",
+};
+</script>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+</style>
+```
+
+- Create Vuejs components
+- Magazines.vue (List of magazines)
+- Magazine.vue (Detail of specific magazine)
+- Here are the both files:
