@@ -422,3 +422,7 @@ body {
 - Magazines.vue (List of magazines)
 - Magazine.vue (Detail of specific magazine)
 - Here are the both files:
+
+[Magazines.vue](Magazines.vue)
+<br>
+[Magazine.vue](Magazine.vue)
