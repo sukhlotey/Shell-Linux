@@ -187,7 +187,7 @@ Code of magazine.html
 Output:<br>
 magazine.html 
 <br>
-<img src="" />
+<img src="./z-images/frappe-temp-detail.png" />
 <br>
 Code of magazine_row.html
 
@@ -205,5 +205,79 @@ Code of magazine_row.html
 Output:<br>
 magazine_row.html
 <br>
-<img  src=""/>
+<img src="./z-images/frappe-temp-list.png" />
 <br>
+
+# Let's integrate FrappeUI
+
+#### Navigate to the /www directory
+
+<code>~/frappe-bench/apps/magazines_management/magazines_management/www/</code>
+
+Steps to setup VueJS, TailwindCSS and FrappeUI.
+
+#####  npm create vue@latest
+
+- Project name: .
+- Add TypeScript? No (unless you want TypeScript)
+- Add JSX Support? No
+- Add Vue Router? No
+- Add Pinia for state management? No
+- Add Vitest for testing? No
+- Add ESLint for code quality? Yes (optional)
+- Add Prettier for code formatting? Yes (optional)
+
+##### Install TailwindCSS
+
+###### Dependencies
+
+<code>npm install -D tailwindcss postcss autoprefixer</code>
+
+This will create config file ot tailwindCSS
+
+<code>npx tailwindcss init</code>
+
+Steps to setup TailwindCSS
+
+- Replace the path with it:
+- In tailwind.config.js
+```bash
+export default {
+  content: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+};
+```
+
+- Add TailwindCSS directives: Create a new file in:
+<code>src/assets/tailwind.css</code>
+
+```bash
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
+- Import TailwindCSS in src/main.js
+```bash
+import { createApp } from 'vue';
+import App from './App.vue';
+import './assets/tailwind.css';
+
+createApp(App).mount('#app');
+
+```
+- Create file in root of project:
+<code>/www/postcss.config.js</code>
+
+```bash
+import { createApp } from 'vue';
+import App from './App.vue';
+import './assets/tailwind.css';
+
+createApp(App).mount('#app');
+```
+So now TailwindCSS features can be use now.
+
+##### Integrate FrappeUI
